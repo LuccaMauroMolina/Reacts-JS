@@ -36,3 +36,16 @@
     transform: rotate(360deg);
   }
 }
+
+header{
+  display: flex;
+  justify-content: space-between;
+}
+
+.logo-medidas{
+  width: 100px;
+  height: 75px;
+  padding-left: 20px;
+  padding-top: 15px;
+}
+

@@ -1,0 +1,9 @@
+.nav-item{
+    display: flex;
+}
+
+li{
+    list-style: none;
+    padding-right: 20px;
+    cursor: pointer;
+}
