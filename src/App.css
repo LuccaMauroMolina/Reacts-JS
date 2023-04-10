@@ -49,3 +49,19 @@ header{
   padding-top: 15px;
 }
 
+card-carrito{
+  height: 100vh;
+  width: 40px;
+  background-color: red;
+}
+
+
+body::-webkit-scrollbar{
+    width: 7px;
+}
+
+body::-webkit-scrollbar-thumb{
+    background-color: rgb(33, 196, 33);
+    border-radius: 9px;
+}
+

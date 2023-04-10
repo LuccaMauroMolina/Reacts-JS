@@ -15,11 +15,11 @@ function NavBar() {
             <li>Mouse</li>
             <li>Teclado</li>
         </ul>
-
         
     </nav>
     
 </header>
+
 
 <CartWidget/>
 </>
