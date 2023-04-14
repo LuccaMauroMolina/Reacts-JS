@@ -15,6 +15,25 @@ export const AsynMock = () => {
     return new Promise((resolve) => {
         setTimeout( () => {
             resolve(productos);
-        }, 2000)
+        }, 100)
+    })
+}
+
+export const getItem = (id) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            const item = productos.find(prod => prod.id === id)
+            resolve(item)
+        }, 100)
+    })
+}
+
+
+export const getCategoria = (idCategoria) => {
+    return new Promise (resolve => {
+        setTimeout(() => {
+            const categoria = productos.filter(prod => prod.id === idCategoria)
+            resolve(categoria)
+        }, 100)
     })
 }

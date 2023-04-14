@@ -1,18 +1,7 @@
-import { useState } from "react";
+//import { useState } from "react";
 import "./Item.css"
-
-export const Item = ({nombre,id,precio,img}) => {
-
-        const [mandar, setCarrito] = useState(null)
-        let carrito = []
-        
-        const agrega = () => {
-        if(mandar > carrito){
-            setCarrito(mandar + 1)
-        }
-    return{mandar}
-    }
-
+import { Link } from "react-router-dom";
+const Item = ({nombre,id,precio,img}) => {
 
     return(
 
@@ -23,9 +12,11 @@ export const Item = ({nombre,id,precio,img}) => {
             <p className="card-precio">${precio}</p>
             <p className="card-id">{id}</p>
             <div className="card-btn">
-            <button className="btn">Ver Detalle</button>
-            <button onClick={agrega}>Agregar</button>
+            <Link to={`/item/${id}`} className="btn">Ver Detalle</Link>
+            <button>Agregar</button>
             </div>
         </div>
 )
     }
+
+export default Item

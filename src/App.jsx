@@ -1,11 +1,33 @@
-//import logo from './logo.jpg';
+//import logo from './logo.png';
 import './App.css';
 import NavBar from "./components/NavBar/NavBar";
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import logo from "./logo.png"
 //import Item from "./components/Item/Item"
+import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer"
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
-function App () {
+
+import React from 'react'
+
+const App = () => {
+  return (
+    <>
+      <BrowserRouter>
+      <NavBar/>
+            <Routes>
+                  <Route exact path='/' element={ <ItemListContainer/> }/>
+                  <Route exact path='/categoria/:IdCategoria:' element={ <ItemListContainer/> }/>
+                  <Route exact path='/item/:idItem' element={ <ItemDetailContainer/> }/>
+            </Routes>
+      </BrowserRouter>
+    </>
+  )
+
+}
+
+export default App
+
+/*function App () {
 
   return (
     <>
@@ -21,10 +43,10 @@ function App () {
 
       </div> 
         
+      <ItemDetailContainer/>
     </>
   );
   }
+*/
 
-
-export default App;
-
+//export default App;
