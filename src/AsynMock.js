@@ -1,4 +1,4 @@
-const productos = [
+/*const productos = [
     { nombre: "Ryzen 5", id:1, precio: 18000, img: "./imgReact/ryzen5.jpg"},
     { nombre: "Ryzen 7", id:2, precio: 23000, img: "./imgReact/ryzen7.jpg"},
     { nombre: "Intel 5", id:3, precio: 22000, img: "./imgReact/intel5.jpg"},
@@ -35,5 +35,46 @@ export const getCategoria = (idCategoria) => {
             const categoria = productos.filter(prod => prod.id === idCategoria)
             resolve(categoria)
         }, 100)
+    })
+}*/
+
+const productos = [
+    {  nombre: "Procesador Ryzen 7", id:2, precio: 23000, img: "../imgReact/ryzen7.jpg", idCat:"1"},
+    {  nombre: "Procesador Intel 5", id:3, precio: 22000, img: "../imgReact/intel5.jpg", idCat:"1"},
+    {  nombre: "Procesador Intel 7", id:4, precio: 25000, img: "../imgReact/intel3.jpg", idCat:"1"},
+    {  nombre: "memoria ram 8 gb delta", id:5, precio: 25000, img: "../imgReact/memoria ram 8 gb delta.jpg", idCat:"3"},
+    {  nombre: "memoria ram 8 gb", id:6, precio: 25000, img: "../imgReact/memoria ram 8 gb.jpg", idCat:"3"},
+    {  nombre: "placa video geforce 1650", id:7, precio: 25000, img: "../imgReact/placa video geforce 1650.jpg", idCat:"2"},
+    {  nombre: "placa video gtx 1060", id:8, precio: 25000, img: "../imgReact/placa video gtx 1060.jpg", idCat:"2"},
+    {  nombre: "placa video rtx 2070", id:9, precio: 25000, img: "../imgReact/placa video rtx 2070.jpg", idCat:"2"}
+]
+
+
+export const getProductos = () => {
+    return new Promise(resolve => {
+        setTimeout( ()=> {
+            resolve(productos)
+        }, 100) 
+    })
+}
+
+
+export const getUnProducto = (id) => {
+    return new Promise(resolve => {
+        setTimeout( ()=> {
+            const producto = productos.find(prod => prod.id === id);
+            resolve(producto);
+        }, 100)
+    })
+}
+
+
+
+export const getProductosPorCategoria = (idCategoria) => {
+    return new Promise( resolve => {
+        setTimeout( ()=> {
+            const productosCategoria = productos.filter(prod => prod.idCat === idCategoria);
+            resolve(productosCategoria);
+        },100)
     })
 }

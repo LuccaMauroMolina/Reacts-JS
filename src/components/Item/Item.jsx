@@ -3,9 +3,9 @@ import "./Item.css"
 import { Link } from "react-router-dom";
 const Item = ({nombre,id,precio,img}) => {
 
-    return(
 
-        
+    return (
+        <div className='prod'>
         <div className="card">
             <img className="card-img" src={img} alt="" />
             <h2 className="card-name">{nombre}</h2>
@@ -16,7 +16,8 @@ const Item = ({nombre,id,precio,img}) => {
             <button>Agregar</button>
             </div>
         </div>
-)
-    }
+        </div>
+    )
+}
 
 export default Item

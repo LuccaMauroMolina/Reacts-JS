@@ -13,12 +13,12 @@ const App = () => {
   return (
     <>
       <BrowserRouter>
-      <NavBar/>
-            <Routes>
-                  <Route exact path='/' element={ <ItemListContainer/> }/>
-                  <Route exact path='/categoria/:IdCategoria:' element={ <ItemListContainer/> }/>
-                  <Route exact path='/item/:idItem' element={ <ItemDetailContainer/> }/>
-            </Routes>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={ <ItemListContainer/> } />
+          <Route path="/categoria/:idCategoria" element={ <ItemListContainer/> } />
+          <Route path="/item/:idItem" element={ <ItemDetailContainer/> }  />
+        </Routes>
       </BrowserRouter>
     </>
   )
