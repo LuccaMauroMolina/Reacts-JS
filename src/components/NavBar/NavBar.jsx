@@ -3,7 +3,9 @@ import "./NavBar.css"
 import { NavLink, Link } from "react-router-dom";
 import logo from "../../logo.png"
 const NavBar = () => {
-
+    /*<li>
+    <NavLink to={`/Categoria/3`}>Memorias</NavLink>
+</li>*/
 return (
     <>
         <header className='logo'>
@@ -22,7 +24,6 @@ return (
             <li>
                 <NavLink to={`/Categoria/3`}>Memorias</NavLink>
             </li>
-
         </ul>
         <CartWidget/>
         

@@ -46,7 +46,7 @@ export default ItemDetailContainer
 
 import { getUnProducto } from "../../AsynMock";
 import { useState, useEffect } from "react";
-import ItemDetail from "../ItemDetailContainer/ItemDetailContainer";
+import ItemDetail from "../ItemDetail/ItemDetail";
 import { useParams } from "react-router-dom";
 
 const ItemDetailContainer = () => {
