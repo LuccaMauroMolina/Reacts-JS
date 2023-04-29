@@ -2,8 +2,19 @@
     text-align: center;
     border: 1px solid #e3e1e1;
     margin: 3rem;
+    display: flex;
+    justify-content: space-evenly;
 }
 
 img {
-    width: 50vw;
+    width: 25vw;
 }
+
+.contador{
+    display: flex;
+}
+
+.imgCant{
+    padding-left: 50px;
+}
+

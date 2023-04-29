@@ -65,14 +65,21 @@ const manejadorCantidad = (cantidad) => {
 }
 return (
     <div className='contenedorItem'>
-        <h2>Nombre: {nombre} </h2>
-        <h3>Precio: {precio} </h3>
-        <h3> ID: {id} </h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam iste reiciendis tempora unde! Quam commodi esse dicta odit nobis, enim, accusamus corrupti veritatis, excepturi aliquam laudantium? Veritatis ex sapiente deserunt.</p>
+        <div className='descripcion'>
+            <h2>Nombre: {nombre} </h2>
+            <h3>Precio: {precio} </h3>
+            <h3> ID: {id} </h3>
+            <p className='parrafo'>Este es un procesaor que esta en excelente funcionamiento <br/> Este es un procesaor que esta en excelente funcionamiento  <br /> Este es un procesaor que esta en excelente funcionamiento <br /> Este es un procesaor que esta en excelente funcionamiento <br /> </p>
+        </div>
+        <div className='imgCant'>
         <img src={img} alt={nombre} />
+        <div className='contador'>
+
     {
         agregarCantidad > 0 ? (<Link to="/cart"> Terminar compra </Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={manejadorCantidad} />)
     }
+    </div>
+    </div>
     </div>
 )
 }
