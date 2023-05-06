@@ -69,6 +69,7 @@ return (
             <h2>Nombre: {nombre} </h2>
             <h3>Precio: {precio} </h3>
             <h3> ID: {id} </h3>
+            <h3>Stock: {stock}</h3>
             <p className='parrafo'>Este es un procesaor que esta en excelente funcionamiento <br/> Este es un procesaor que esta en excelente funcionamiento  <br /> Este es un procesaor que esta en excelente funcionamiento <br /> Este es un procesaor que esta en excelente funcionamiento <br /> </p>
         </div>
         <div className='imgCant'>

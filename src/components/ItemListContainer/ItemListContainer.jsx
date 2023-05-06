@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react'
-import { getProductos, getProductosPorCategoria } from '../../AsynMock'
+//import { getProductos, getProductosPorCategoria } from '../../AsynMock'
 import ItemList from '../ItemList/ItemList';
 import { useParams } from 'react-router-dom';
 //importamos nuevas funciones: 
@@ -24,7 +24,7 @@ const ItemListContainer = ({ greeting }) => {
                 setProductos(nuevosProductos);
             })
             .catch(error => console.log(error))
-    }, [])
+    })
 
 
 
