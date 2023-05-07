@@ -1,14 +1,14 @@
 //import { useState } from "react";
 import "./Item.css"
 import { Link } from "react-router-dom";
-//import { collection, doc, query, updateDoc, onSnapshot } from "firebase/firestore";
-//import { useState, useEffect} from "react";
-//import { db } from "../../Services/firebase/config"
+import { collection, doc, query, updateDoc, onSnapshot } from "firebase/firestore";
+import { useState, useEffect} from "react";
+import { db } from "../../Services/firebase/config"
 
 
 const Item = ({nombre,id,precio,img,stock}) => {
 
-    /*const [productos, setProductos] = useState([]);
+    const [productos, setProductos] = useState([]);
 
     useEffect(() => {
         const querq = query(collection(db, "productos"));
@@ -39,9 +39,9 @@ const Item = ({nombre,id,precio,img,stock}) => {
                 console.log(error);
             })
         }
-    }*/
+    }
 
-    /*return(
+    return(
         <div className="prod">
             {
                 productos.map((producto) => (
@@ -57,8 +57,10 @@ const Item = ({nombre,id,precio,img,stock}) => {
             }
         </div>
     )
-}*/
-    return (
+
+
+}
+    /*return (
         <div className='prod'>
             <div className="card">
             <img className="card-img" src={img} alt="" />
@@ -72,6 +74,7 @@ const Item = ({nombre,id,precio,img,stock}) => {
         </div>
         </div>
     )
-}
+}*/
+
 
 export default Item;

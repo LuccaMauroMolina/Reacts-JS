@@ -31,8 +31,6 @@ return (
     
 </header>
 
-
-<CartWidget/>
 </>
 )
 }
