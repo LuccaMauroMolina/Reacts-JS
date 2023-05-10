@@ -124,13 +124,11 @@ import { CartContext } from '../CartContext/CartContext';
 */
 
 
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { CarritoContext } from "../CartContext/CartContext";
 import { db } from "../../Services/firebase/config";
-import { collection, addDoc } from "firebase/firestore";
-
-
+import { collection, addDoc, doc, query, updateDoc, onSnapshot } from "firebase/firestore";
 const Checkout = () => {
     const { carrito, vaciarCarrito } = useContext(CarritoContext);
     const [nombre, setNombre] = useState("");
@@ -188,6 +186,44 @@ const Checkout = () => {
             });
     };
 
+    const [productos, setProductos] = useState([]);
+
+    useEffect(() => {
+        //Creamos una consulta a la colección "productos"
+        const q = query(collection(db, "productos"));
+
+        //onSnapShot es una función que escucha los cambios en la consulta. 
+
+        const modificar = onSnapshot(q, function (querySnapShot) {
+            const docs = [];
+            querySnapShot.forEach(function (doc) {
+                docs.push({ id: doc.id, ...doc.data() });
+            });
+            setProductos(docs);
+        });
+
+        return () => {
+            modificar();
+        };
+    }, []);
+
+    ///Función para bajar el stock cuando el usuario compra: 
+    const bajarStock = (id, stock) => {
+        if (stock > 0) {
+            const productoRef = doc(db, "productos", id);
+            updateDoc(productoRef, {
+                stock: stock - 1,
+            })
+                //updateDoc me actualiza el documento. 
+                .then(() => {
+                    console.log("El stock se actualizó correctamente");
+                })
+                .catch((error) => {
+                    console.log(error);
+                })
+        }
+    }
+
 
     return (
         <div>
@@ -241,7 +277,7 @@ const Checkout = () => {
                     </label>
                 </div>
                 {error && <p style={{ color: "red" }}>{error}</p>}
-                <button type="submit">Finalizar compra</button>
+                <button onClick={() => bajarStock(productos.id, productos.stock)}> Finalizar Compra </button>
             </form>
             {ordenId && (
                 <div>
